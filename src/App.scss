@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Lato&display=swap');
+
+$main-font: 'Lato', sans-serif;
+$second-font: 'Bangers', cursive;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $main-font;
+}
+body{
+  background-color: rgb(224, 224, 224);
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+#main{
+  width: 100%;
+  height: 100vh;
+  background: url('./img/main.jpg') no-repeat center bottom /cover;
+  display: flex;
+
+  div{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+
+    &:hover{
+      background-color: rgba(0,0,0,0.4);;
+    }
+
+    a{
+      margin: auto;
+      font-size: 20px;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 10px 10px 40px #000;
+      transition: all 200ms ease-in;
+
+      &:hover{
+        background-color: #fff;
+        color: #000;
+        transform: scale(1.2)
+      }
+    }
+
+    &:first-child{
+      border-right: 3px solid rgb(224, 224, 224);
+    }
+  }
+}
+
+@media screen and (max-width: 560px){
+  #main div{
+    height: 50%;
+    width: 100%;
+
+    &:first-child{
+      border-right: none;
+      border-bottom: 3px solid rgb(224, 224, 224);
+    }
+  }
+  #main{
+    flex-direction: column;
+  }
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header{
+  width: 100%;
+  height: 60px;
+  background-color: rgb(48, 42, 71);
+
+  h1{
+    color: #fff;
+    font-family: $second-font;
+  }
+
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+  }
+
+  a{
+    margin-right: 15px;
+    font-size: 20px;
+
+    &:hover{
+      color: rgb(234, 255, 41);
+    }
+  }
+  @media screen and (max-width:500px) {
+    a{
+      font-size: 16px;
+    }
+    h1{
+      font-size: 20px;
+    }
+  }
+}
+
+#courses, #users{
+  .main-title{
+    margin: 20px auto;
+    font-family: $second-font;
+  }
+  .container{
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  }
+  table{
+    width: 100%;
+    overflow-x: visible;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    td{
+      width: 25%;
+      text-align: center;
+      word-wrap:break-word;
+    }
+    thead{
+      display: block;
+      width: 100%;
+      
+      .sort-btn{
+        cursor: pointer;
+        &:hover{
+          color:#fff;
+        }
+      }
+
+      tr{
+      background-color: rgb(136, 136, 136);
+      width: 100%;
+      padding: 10px;
+      margin: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+    }
+    }
+  }
+  .courses-header, .users-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    width: 90%;
+    margin: 20px;
+    
+    @media screen and (max-width:500px){
+      &{
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+      }
+      #amount-native-simple{
+        margin-top: 15px;
+      }
+    }
+    
+    .courses-actions button, .users-actions button{
+      margin-right: 10px;
+    }
+  }
+  .courses-main, .users-main{
+    margin: 20px;
+    width: 90%;
+  }
+  .course-item, .user-item{
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p{
+      font-size: 15px;
+      font-weight: 400;
+    }
+    
+    .MuiFab-root{
+      margin-right: 10px;
+    }
+  }
+}
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+
+  .modal-container{
+    margin: auto;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    align-content: space-between;
+    padding: 15px;
+    box-shadow: 10px 10px 40px #000;
+
+    .MuiButton-root:first-child{
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      min-width: 30px;
+    }
+
+    
+  }
+}
+
+.MuiPaper-root{
+  margin: 20px;
+}
